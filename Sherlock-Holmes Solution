@@ -1,0 +1,43 @@
+In the book on page 122, I felt the solution wasn't really shown or understood. Because of that I tried to get to code to operate as intended. 
+The original code in the book is:
+var balance = 10500;
+var cameraOn = true;
+
+function steal(balance, amount){
+  cameraOn = false;
+  if (amount < balance) {
+    balance = balance - amount;
+    }
+    return amount;
+    cameraOn=true;
+   }
+   
+var amount = steal(balance, 1250);
+alert("Criminal: you stole " + amount + "!");
+
+Because the balance variable is shadowed in the function parameters, this code will not subtract the stolen amount from the global balance variable.
+Doing this causes the function to think "balance" is a new local variable, and therefore does not take away from the global variable. 
+Also, cameraOn=true is set AFTER the return statement, which would never turn the camera back on. 
+
+A soulution that could work that I figured out is: 
+
+var balance = 10500;
+var cameraOn = true;
+
+function steal(amount){
+    cameraOn = false;
+    if (amount < balance){
+        balance = balance - amount;
+    }
+    cameraOn = true;
+    return amount;
+}
+
+var amount = steal(1250);
+alert('Criminal: You stole' + amount + '!');
+//this section shows the code works as intended
+alert(balance);
+alert(cameraOn);
+
+I added the additional alerts to show the code is working as intended, and fixed the camera to turn it back on. 
+Copy and paste this code into your HTML file to experiment with it :)
