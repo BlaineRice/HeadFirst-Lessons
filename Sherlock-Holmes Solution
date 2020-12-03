@@ -55,7 +55,7 @@ function steal(amount){
   answer = prompt('Do you want to help? Or steal?')
   cameraOn = false;
   console.log(cameraOn);
-  if (answer == "steal" || "Steal"){
+  if ((answer == "steal") || (answer == "Steal")){
     var amount = Number(prompt('How much do you want to steal?'));
     if(amount > balance){
       alert("That's too much, your greed got you caught!");
@@ -63,7 +63,7 @@ function steal(amount){
     }
     balance = balance - amount;
     alert("You stole: " + amount + "!");
-  }else if (answer == "help" || "Help"){
+  }else if ((answer == "help") || (answer == "Help")){
     var amount = Number(prompt('How much do you want to add to this account?'));
     balance = balance + amount;
     alert("Thank for helping! You added " + amount + " to this account")
