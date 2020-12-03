@@ -44,7 +44,7 @@ Copy and paste this code into your HTML file to experiment with it :)
 
 
 After playing around with this some more I made it into a little mini-game. It now asks you if you want to help or steal.
-Paste the code below into your HTML file and open it via a live server. 
+Paste the code below into your HTML file, Google Chrome is the preferred browser. Make sure to check in the browser console to verify the code works and the amounts are adjusted 
 Be careful and don't get greedy!
 
 var balance = 10500;
@@ -52,10 +52,10 @@ var cameraOn = true;
 
 function steal(amount){
   alert('There is ' + balance + " in this account")
-  answer = prompt('Do you want to help? Or Steal?')
+  answer = prompt('Do you want to help? Or steal?')
   cameraOn = false;
   console.log(cameraOn);
-  if (answer == "steal"){
+  if (answer == "steal" || "Steal"){
     var amount = Number(prompt('How much do you want to steal?'));
     if(amount > balance){
       alert("That's too much, your greed got you caught!");
@@ -63,7 +63,7 @@ function steal(amount){
     }
     balance = balance - amount;
     alert("You stole: " + amount + "!");
-  }else if (answer == "help"){
+  }else if (answer == "help" || "Help"){
     var amount = Number(prompt('How much do you want to add to this account?'));
     balance = balance + amount;
     alert("Thank for helping! You added " + amount + " to this account")
