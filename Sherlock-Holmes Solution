@@ -1,4 +1,4 @@
-In the book on page 122, I felt the solution wasn't really shown or understood. Because of that I tried to get to code to operate as intended. 
+In the book on page 122, I felt the solution wasn't really shown or understood. Because of that I tried to get the code to operate as intended. 
 The original code in the book is:
 var balance = 10500;
 var cameraOn = true;
